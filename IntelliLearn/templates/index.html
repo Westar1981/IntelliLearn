@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntelliLearn</title>
+</head>
+<body>
+    <h1>Welcome to IntelliLearn</h1>
+    <h2>Learning Path</h2>
+    <ul>
+        {% for module in learning_path %}
+            <li>{{ module.module }} - {{ module.status }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('quiz_page') }}">Take a Quiz</a>
+    <br>
+    <a href="{{ url_for('save_learning_path') }}">Save Learning Path</a>
+    <br>
+    <a href="{{ url_for('load_learning_path') }}">Load Learning Path</a>
+</body>
+</html>
