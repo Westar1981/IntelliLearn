@@ -21,7 +21,8 @@ def main():
     print("Options:", question["options"])
     
     # User input for quiz answer
-    selected_option = input("Select an option: ")
+    # Automated selection for testing
+    selected_option = question["options"][0]
     feedback = quiz.get_feedback(question["question"], selected_option)
     print("Feedback:", feedback)
     
