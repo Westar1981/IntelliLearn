@@ -20,8 +20,8 @@ def main():
     print(question["question"])
     print("Options:", question["options"])
     
-    # Placeholder for user input
-    selected_option = question["options"][0]
+    # User input for quiz answer
+    selected_option = input("Select an option: ")
     feedback = quiz.get_feedback(question["question"], selected_option)
     print("Feedback:", feedback)
     
@@ -30,6 +30,15 @@ def main():
         learning_path.update_learning_path("Introduction to Python", "completed")
     
     print("\nUpdated Learning Path:")
+    print(learning_path.get_learning_path())
+    
+    # Save learning path to file
+    learning_path.save_learning_path("learning_path.json")
+    print("\nLearning path saved to learning_path.json")
+    
+    # Load learning path from file
+    learning_path.load_learning_path("learning_path.json")
+    print("\nLearning path loaded from learning_path.json")
     print(learning_path.get_learning_path())
 
 if __name__ == "__main__":
